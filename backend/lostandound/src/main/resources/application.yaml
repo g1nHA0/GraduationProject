@@ -1,20 +1,23 @@
 server:
-  port: 8080
+  port: 8082
   servlet:
     context-path: /
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db_java1234_mall_v2?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/lost_and_found?serverTimezone=Asia/Shanghai
     username: root
     password:
 mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
   global-config:
     db-config:
       id-type: auto #id生成规则：数据库id自增
   configuration:
-    map-underscore-to-camel-case: false # 开启驼峰功能
+    map-underscore-to-camel-case: true # 开启驼峰功能
     auto-mapping-behavior: full # 自动映射任何复杂的结果
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    mapper-locations: classpath:mybatis/mapper/*.xml
+wxMini:
+  appId: wx617e056b1ae3f5fe  #小程序的appid，在哪获取如果不知道的话可以百度哟
+  secret: a4c29110e3a66e0b934af3e43f31d45c  #小程序密匙

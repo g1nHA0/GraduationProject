@@ -1,6 +1,7 @@
 package xyz.g1nha0.lostandound.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,16 @@ public class ProductController {
         List<Product> swiperProductList = productService.list(new QueryWrapper<Product>().eq("isSwiper", true).orderByAsc("swiperSort"));
         Map<String,Object> map=new HashMap<>();
         map.put("message",swiperProductList);
+        return R.ok(map);
+    }
+
+    @GetMapping("/findHot")
+    public R findHot(){
+        Page<Product> page = new Page<>(0,8);
+        Page<Product> pageProduct = productService.page(page, new QueryWrapper<Product>().eq("isHot", true).orderByAsc("hotDateTime"));
+        List<Product> hotProductList =pageProduct.getRecords();
+        Map<String,Object> map=new HashMap<>();
+        map.put("message",hotProductList);
         return R.ok(map);
     }
 }

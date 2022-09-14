@@ -16,6 +16,8 @@ public class WebAppConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/image/swiper/**").addResourceLocations("file:/Users/cuz2retr0/Downloads/swiperImgs/");
+        registry.addResourceHandler("/image/swiper/**").addResourceLocations("file:/Users/cuz2retr0/Desktop/GitHub/GraduationProject/pics/swiperImgs/");
+        registry.addResourceHandler("/image/bigType/**").addResourceLocations("file:/Users/cuz2retr0/Desktop/GitHub/GraduationProject/pics/bigTypeImgs/");
+        registry.addResourceHandler("/image/product/**").addResourceLocations("file:/Users/cuz2retr0/Desktop/GitHub/GraduationProject/pics/productImgs/");
     }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xyz.g1nha0.lostandound.mapper.ProductMapper">
+<mapper namespace="xyz.g1nha0.lostandound.mapper.BigTypeMapper">
 
 
 </mapper>
